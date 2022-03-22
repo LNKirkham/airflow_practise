@@ -1,0 +1,5 @@
+[2022-03-16 17:05:18,258] {processor.py:163} INFO - Started process (PID=334) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/tutorial.py
+[2022-03-16 17:05:18,269] {processor.py:642} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2022-03-16 17:05:18,316] {logging_mixin.py:109} INFO - [2022-03-16 17:05:18,291] {dagbag.py:500} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/tutorial.py
+[2022-03-16 17:05:19,366] {processor.py:654} INFO - DAG(s) dict_keys(['tutorial']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/tutorial.py
+[2022-03-16 17:05:23,100] {logging_mixin.py:109} INFO - [2022-03-16 17:05:23,100] {process_utils.py:237} INFO - Waiting up to 5 seconds for processes to exit...

@@ -1,0 +1,25 @@
+[2022-03-21 13:08:35,145] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: etl_pipeline.etl_task scheduled__2022-03-20T00:00:00+00:00 [queued]>
+[2022-03-21 13:08:35,154] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: etl_pipeline.etl_task scheduled__2022-03-20T00:00:00+00:00 [queued]>
+[2022-03-21 13:08:35,154] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 13:08:35,154] {taskinstance.py:1244} INFO - Starting attempt 1 of 4
+[2022-03-21 13:08:35,154] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-21 13:08:35,163] {taskinstance.py:1264} INFO - Executing <Task(PythonOperator): etl_task> on 2022-03-20 00:00:00+00:00
+[2022-03-21 13:08:35,165] {standard_task_runner.py:52} INFO - Started process 81748 to run task
+[2022-03-21 13:08:35,171] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'etl_pipeline', 'etl_task', 'scheduled__2022-03-20T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dags.py', '--cfg-path', '/var/folders/s8/22y4zzd16qzfpxjsjp7sm1s00000gn/T/tmp76ry56g0', '--error-file', '/var/folders/s8/22y4zzd16qzfpxjsjp7sm1s00000gn/T/tmp8s2p207j']
+[2022-03-21 13:08:35,173] {standard_task_runner.py:77} INFO - Job 11: Subtask etl_task
+[2022-03-21 13:08:35,211] {logging_mixin.py:109} INFO - Running <TaskInstance: etl_pipeline.etl_task scheduled__2022-03-20T00:00:00+00:00 [running]> on host 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa
+[2022-03-21 13:08:35,241] {taskinstance.py:1429} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=louisek@gmail.com
+AIRFLOW_CTX_DAG_OWNER=louise
+AIRFLOW_CTX_DAG_ID=etl_pipeline
+AIRFLOW_CTX_TASK_ID=etl_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-20T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-20T00:00:00+00:00
+[2022-03-21 13:08:35,778] {python.py:175} INFO - Done. Returned value was: None
+[2022-03-21 13:08:35,785] {taskinstance.py:1272} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=etl_task, execution_date=20220320T000000, start_date=20220321T130835, end_date=20220321T130835
+[2022-03-21 13:08:35,825] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-03-21 13:08:35,841] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-03-21 13:08:35,848] {dagrun.py:545} INFO - Marking run <DagRun etl_pipeline @ 2022-03-20 00:00:00+00:00: scheduled__2022-03-20T00:00:00+00:00, externally triggered: False> successful
+[2022-03-21 13:08:35,849] {dagrun.py:590} INFO - DagRun Finished: dag_id=etl_pipeline, execution_date=2022-03-20 00:00:00+00:00, run_id=scheduled__2022-03-20T00:00:00+00:00, run_start_date=2022-03-21 13:08:24.804136+00:00, run_end_date=2022-03-21 13:08:35.849076+00:00, run_duration=11.04494, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2022-03-20 00:00:00+00:00, data_interval_end=2022-03-21 00:00:00+00:00, dag_hash=0f9d59be55128019e760e68ef3a5b7ee

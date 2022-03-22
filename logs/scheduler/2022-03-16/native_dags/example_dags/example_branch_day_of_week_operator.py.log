@@ -1,0 +1,167 @@
+[2022-03-16 17:04:55,131] {processor.py:163} INFO - Started process (PID=321) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py
+[2022-03-16 17:04:55,145] {processor.py:642} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py for tasks to queue
+[2022-03-16 17:04:55,148] {logging_mixin.py:109} INFO - [2022-03-16 17:04:55,148] {dagbag.py:500} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py
+[2022-03-16 17:04:55,715] {processor.py:654} INFO - DAG(s) dict_keys(['example_weekday_branch_operator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_day_of_week_operator.py
+[2022-03-16 17:05:22,265] {logging_mixin.py:109} WARNING - --- Logging error ---
+[2022-03-16 17:05:22,268] {logging_mixin.py:109} WARNING - Traceback (most recent call last):
+[2022-03-16 17:05:22,270] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/handlers.py", line 69, in emit
+    if self.shouldRollover(record):
+[2022-03-16 17:05:22,273] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/handlers.py", line 186, in shouldRollover
+    self.stream.seek(0, 2)  #due to non-posix-compliant Windows feature
+[2022-03-16 17:05:22,275] {logging_mixin.py:109} WARNING - RuntimeError: reentrant call inside <_io.BufferedWriter name='/opt/airflow/logs/dag_processor_manager/dag_processor_manager.log'>
+[2022-03-16 17:05:22,277] {logging_mixin.py:109} WARNING - Call stack:
+[2022-03-16 17:05:22,320] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+[2022-03-16 17:05:22,325] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/__main__.py", line 48, in main
+    args.func(args)
+[2022-03-16 17:05:22,327] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+[2022-03-16 17:05:22,329] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+[2022-03-16 17:05:22,331] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/scheduler_command.py", line 75, in scheduler
+    _run_scheduler_job(args=args)
+[2022-03-16 17:05:22,333] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/scheduler_command.py", line 46, in _run_scheduler_job
+    job.run()
+[2022-03-16 17:05:22,336] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/base_job.py", line 246, in run
+    self._execute()
+[2022-03-16 17:05:22,338] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/scheduler_job.py", line 651, in _execute
+    self._run_scheduler_loop()
+[2022-03-16 17:05:22,340] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/scheduler_job.py", line 738, in _run_scheduler_loop
+    self.processor_agent.heartbeat()
+[2022-03-16 17:05:22,342] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 302, in heartbeat
+    self._heartbeat_manager()
+[2022-03-16 17:05:22,346] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 323, in _heartbeat_manager
+    self.start()
+[2022-03-16 17:05:22,348] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 161, in start
+    process.start()
+[2022-03-16 17:05:22,352] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+[2022-03-16 17:05:22,357] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+[2022-03-16 17:05:22,365] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+[2022-03-16 17:05:22,369] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/popen_fork.py", line 74, in _launch
+    code = process_obj._bootstrap()
+[2022-03-16 17:05:22,372] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+[2022-03-16 17:05:22,375] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+[2022-03-16 17:05:22,383] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 287, in _run_processor_manager
+    processor_manager.start()
+[2022-03-16 17:05:22,388] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 520, in start
+    return self._run_parsing_loop()
+[2022-03-16 17:05:22,392] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 595, in _run_parsing_loop
+    self.start_new_processes()
+[2022-03-16 17:05:22,397] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 964, in start_new_processes
+    processor.start()
+[2022-03-16 17:05:22,401] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/processor.py", line 204, in start
+    process.start()
+[2022-03-16 17:05:22,402] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+[2022-03-16 17:05:22,404] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+[2022-03-16 17:05:22,405] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+[2022-03-16 17:05:22,408] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/popen_fork.py", line 74, in _launch
+    code = process_obj._bootstrap()
+[2022-03-16 17:05:22,409] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+[2022-03-16 17:05:22,411] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+[2022-03-16 17:05:22,412] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/processor.py", line 168, in _run_file_processor
+    callback_requests=callback_requests,
+[2022-03-16 17:05:22,413] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+[2022-03-16 17:05:22,414] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/processor.py", line 663, in process_file
+    dagbag.sync_to_db()
+[2022-03-16 17:05:22,415] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+[2022-03-16 17:05:22,417] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 620, in sync_to_db
+    serialize_errors.extend(_serialize_dag_capturing_errors(dag, session))
+[2022-03-16 17:05:22,419] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 597, in _serialize_dag_capturing_errors
+    self._sync_perm_for_dag(dag, session=session)
+[2022-03-16 17:05:22,420] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 67, in wrapper
+    return func(*args, **kwargs)
+[2022-03-16 17:05:22,421] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 653, in _sync_perm_for_dag
+    from airflow.www.security import ApplessAirflowSecurityManager
+[2022-03-16 17:05:22,422] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+[2022-03-16 17:05:22,423] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+[2022-03-16 17:05:22,424] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+[2022-03-16 17:05:22,425] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+[2022-03-16 17:05:22,427] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[2022-03-16 17:05:22,428] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/www/security.py", line 36, in <module>
+    from airflow.www.views import (
+[2022-03-16 17:05:22,430] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+[2022-03-16 17:05:22,431] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+[2022-03-16 17:05:22,432] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+[2022-03-16 17:05:22,433] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+[2022-03-16 17:05:22,434] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[2022-03-16 17:05:22,435] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/www/views.py", line 38, in <module>
+    import nvd3
+[2022-03-16 17:05:22,436] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+[2022-03-16 17:05:22,437] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+[2022-03-16 17:05:22,438] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+[2022-03-16 17:05:22,439] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+[2022-03-16 17:05:22,440] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[2022-03-16 17:05:22,441] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/nvd3/__init__.py", line 19, in <module>
+    from .lineChart import lineChart
+[2022-03-16 17:05:22,442] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+[2022-03-16 17:05:22,443] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+[2022-03-16 17:05:22,444] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+[2022-03-16 17:05:22,445] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+[2022-03-16 17:05:22,446] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[2022-03-16 17:05:22,447] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/nvd3/lineChart.py", line 12, in <module>
+    from .NVD3Chart import NVD3Chart, TemplateMixin
+[2022-03-16 17:05:22,449] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+[2022-03-16 17:05:22,450] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+[2022-03-16 17:05:22,450] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+[2022-03-16 17:05:22,451] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+[2022-03-16 17:05:22,452] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[2022-03-16 17:05:22,455] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/nvd3/NVD3Chart.py", line 15, in <module>
+    from slugify import slugify
+[2022-03-16 17:05:22,457] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+[2022-03-16 17:05:22,458] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 963, in _find_and_load_unlocked
+[2022-03-16 17:05:22,459] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap>", line 906, in _find_spec
+[2022-03-16 17:05:22,460] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 1280, in find_spec
+[2022-03-16 17:05:22,461] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 1252, in _get_spec
+[2022-03-16 17:05:22,462] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 1364, in find_spec
+[2022-03-16 17:05:22,463] {logging_mixin.py:109} WARNING -   File "<frozen importlib._bootstrap_external>", line 81, in _path_stat
+[2022-03-16 17:05:22,464] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 496, in _exit_gracefully
+    self.log.debug("Current Stacktrace is: %s", '\n'.join(map(str, inspect.stack())))
+[2022-03-16 17:05:22,466] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/inspect.py", line 1513, in stack
+    return getouterframes(sys._getframe(1), context)
+[2022-03-16 17:05:22,468] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/inspect.py", line 1490, in getouterframes
+    frameinfo = (frame,) + getframeinfo(frame, context)
+[2022-03-16 17:05:22,469] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/inspect.py", line 1464, in getframeinfo
+    lines, lnum = findsource(frame)
+[2022-03-16 17:05:22,470] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/inspect.py", line 768, in findsource
+    file = getsourcefile(object)
+[2022-03-16 17:05:22,472] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/inspect.py", line 696, in getsourcefile
+    if getattr(getmodule(object, filename), '__loader__', None) is not None:
+[2022-03-16 17:05:22,473] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/inspect.py", line 733, in getmodule
+    if ismodule(module) and hasattr(module, '__file__'):
+[2022-03-16 17:05:22,475] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 495, in _exit_gracefully
+    self.log.info("Exiting gracefully upon receiving signal %s", signum)
+[2022-03-16 17:05:22,476] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1378, in info
+    self._log(INFO, msg, args, **kwargs)
+[2022-03-16 17:05:22,477] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1514, in _log
+    self.handle(record)
+[2022-03-16 17:05:22,478] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1524, in handle
+    self.callHandlers(record)
+[2022-03-16 17:05:22,479] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1586, in callHandlers
+    hdlr.handle(record)
+[2022-03-16 17:05:22,480] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 894, in handle
+    self.emit(record)
+[2022-03-16 17:05:22,482] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/handlers.py", line 71, in emit
+    logging.FileHandler.emit(self, record)
+[2022-03-16 17:05:22,483] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1127, in emit
+    StreamHandler.emit(self, record)
+[2022-03-16 17:05:22,484] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1029, in emit
+    self.flush()
+[2022-03-16 17:05:22,485] {logging_mixin.py:109} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1009, in flush
+    self.stream.flush()
+[2022-03-16 17:05:22,486] {logging_mixin.py:109} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/manager.py", line 495, in _exit_gracefully
+    self.log.info("Exiting gracefully upon receiving signal %s", signum)
+[2022-03-16 17:05:22,487] {logging_mixin.py:109} WARNING - Message: 'Exiting gracefully upon receiving signal %s'
+Arguments: (15,)
+[2022-03-16 17:05:23,016] {logging_mixin.py:109} INFO - [2022-03-16 17:05:23,016] {process_utils.py:237} INFO - Waiting up to 5 seconds for processes to exit...

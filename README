@@ -1,1 +1,7 @@
 
+export AIRFLOW_HOME=/Users/louisekirkham/Documents/linkedin_learning/Ex_Files_Data_Engineering_Foundations/airflow
+
+airflow webserver
+
+Airflow scheduler
+
