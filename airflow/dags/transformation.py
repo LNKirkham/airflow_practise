@@ -74,3 +74,5 @@ if __name__ == "__main__":
     print('RATINGS')
     print(ratings_df.show())
 
+    ## Save ratings to csv
+    ratings_df.to_csv('/Users/louisekirkham/Documents/personal/repos/airflow_practise/data/ratings.csv')
